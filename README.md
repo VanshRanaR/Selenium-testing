@@ -61,83 +61,73 @@ selenium1
 Important rule:
 TestNG test classes must always be inside src/test/java.
 ```
+## 4. TestNG Framework
 
-4. TestNG Framework
 TestNG is used for:
 
-Organizing test cases
-
-Managing execution flow
-
-Generating reports
-
-Supporting annotations
+- Organizing test cases  
+- Managing execution flow  
+- Generating reports  
+- Supporting annotations  
 
 Common annotations:
 
-java
-Copy code
-@BeforeTest   // Browser setup  
-@Test         // Actual test execution  
-@AfterTest    // Close browser  
-Execution flow:
+```java
+@BeforeTest   // Browser setup
+@Test         // Actual test execution
+@AfterTest    // Close browser
+```
 
-less
-Copy code
-@BeforeTest → Setup browser  
-@Test → Run test  
-@AfterTest → Close browser  
+
+
+
 TestNG makes tests:
 
-Structured
+- Structured  
+- Maintainable  
+- Scalable  
 
-Maintainable
+---
 
-Scalable
+## 5. Page Object Model (POM)
 
-5. Page Object Model (POM)
 POM is a design pattern where:
 
-Each web page is represented as a separate class
+- Each web page is represented as a separate class  
+- Locators are written only once  
+- Test logic and UI elements are separated  
 
-Locators are written only once
+### Benefits
 
-Test logic and UI elements are separated
+- Code reusability  
+- Easy maintenance  
+- Clean architecture  
 
-Benefits:
+### Example Usage
 
-Code reusability
-
-Easy maintenance
-
-Clean architecture
-
-Example usage:
-
-java
-Copy code
+```java
 ebaypage.ebayserc(driver).sendKeys("laptop");
 ebaypage.click(driver).click();
+````
 6. Running Tests
 You can run tests in two ways:
 
-Using IntelliJ:
-
+Using IntelliJ
 Click ▶ near the @Test annotation
 
-Using Maven:
-
+Using Maven
 bash
 Copy code
 mvn test
 7. Git Usage
 Git is used for version control:
-
+```
 bash
 Copy code
 git add .
 git commit -m "Learnt TestNG automation"
 git push origin main
+````
 📌 What I Have Achieved Till Now
 ✔ Selenium setup
 
@@ -165,3 +155,5 @@ TestNG framework
 Maven setup
 
 POM design
+
+Copy code
