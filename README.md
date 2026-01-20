@@ -128,6 +128,131 @@ git add .
 git commit -m "Learnt TestNG automation"
 git push origin main
 ````
+
+
+## 🔐 8. Login Page Automation (Real Website)
+
+I have automated the Login functionality of a real website using Selenium, TestNG, and POM.
+
+Website used:
+https://www.saucedemo.com
+
+yaml
+Copy code
+
+This website is specially designed for automation practice.
+
+---
+
+## 🧪 Login Test Scenarios Implemented
+
+| Test Type | Description |
+|---------|------------|
+| Positive Test | Login with valid username and password |
+| Negative Test | Login with invalid username and password |
+
+Test Credentials:
+
+| Type | Username | Password |
+|------|---------|---------|
+| Valid | standard_user | secret_sauce |
+| Invalid | wrong_user | wrong_pass |
+
+---
+
+## 📂 Login Page Project Structure
+
+src
+├── main
+│ └── java
+│ └── org.example
+│ └── LoginPage.java → Page Object Class
+│
+└── test
+└── java
+└── LoginTest.java → TestNG Test Class
+
+pgsql
+Copy code
+
+---
+
+## 🧩 LoginPage.java (POM Class)
+
+All locators and actions of the login page are written here.
+
+```java
+public class LoginPage {
+
+    public static WebElement username(WebDriver driver) {
+        return driver.findElement(By.id("user-name"));
+    }
+
+    public static WebElement password(WebDriver driver) {
+        return driver.findElement(By.id("password"));
+    }
+
+    public static WebElement loginButton(WebDriver driver) {
+        return driver.findElement(By.id("login-button"));
+    }
+
+    public static WebElement errorMessage(WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("h3[data-test='error']")
+        ));
+    }
+}
+```
+🧪 LoginTest.java (TestNG Class)
+```
+Valid Login Test (Positive Test Case)
+java
+Copy code
+@Test(priority = 1)
+public void validLoginTest() {
+    LoginPage.username(driver).sendKeys("standard_user");
+    LoginPage.password(driver).sendKeys("secret_sauce");
+    LoginPage.loginButton(driver).click();
+
+    Assert.assertEquals(driver.getCurrentUrl(),
+            "https://www.saucedemo.com/inventory.html");
+    System.out.println("Valid Login Test Passed");
+}
+Invalid Login Test (Negative Test Case)
+java
+Copy code
+@Test(priority = 2)
+public void invalidLoginTest() {
+    driver.get("https://www.saucedemo.com/");
+
+    LoginPage.username(driver).sendKeys("wrong_user");
+    LoginPage.password(driver).sendKeys("wrong_pass");
+    LoginPage.loginButton(driver).click();
+
+    String error = LoginPage.errorMessage(driver).getText();
+    Assert.assertTrue(error.contains("Epic sadface"));
+    System.out.println("Invalid Login Test Passed");
+}
+````
+🔄 Execution Flow for Login Test
+less
+Copy code
+```
+@BeforeTest → Launch Browser  
+@Test → Execute Login Test  
+@AfterTest → Close Browser
+````  
+🎯 What This Login Automation Covers
+✔ Positive testing (Valid login)
+✔ Negative testing (Invalid login)
+✔ Explicit wait handling
+✔ Assertions validation
+✔ POM design pattern
+✔ TestNG structure
+✔ Real website automation
+
+
 📌 What I Have Achieved Till Now
 ✔ Selenium setup
 
