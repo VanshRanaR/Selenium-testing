@@ -18,11 +18,8 @@ WebDriver is the core interface that:
 - Finds web elements  
 - Performs actions like `click()`, `sendKeys()`, etc.
 
-Flow:
-Java Code → Selenium WebDriver → Browser Driver → Real Browser
-
-yaml
-Copy code
+Flow:  
+Java Code → Selenium WebDriver → Browser Driver → Real Browser  
 
 ---
 
@@ -32,10 +29,11 @@ Maven is used to:
 
 - Manage Selenium and TestNG dependencies  
 - Maintain project structure  
-- Run tests using:
+- Build and run automation tests  
+
+Command to run tests:
 
 ```bash
-````
 mvn test
 Dependencies added:
 
@@ -46,6 +44,8 @@ TestNG
 Maven Surefire Plugin (for running TestNG tests)
 
 3. Project Structure
+Project follows standard Maven structure:
+
 css
 Copy code
 selenium1
@@ -59,8 +59,8 @@ selenium1
     └── test
         └── java        → All Selenium + TestNG test cases
 Important rule:
-
 TestNG test classes must always be inside src/test/java.
+```
 
 4. TestNG Framework
 TestNG is used for:
@@ -77,9 +77,9 @@ Common annotations:
 
 java
 Copy code
-@BeforeTest   // Browser setup
-@Test         // Actual test execution
-@AfterTest    // Close browser
+@BeforeTest   // Browser setup  
+@Test         // Actual test execution  
+@AfterTest    // Close browser  
 Execution flow:
 
 less
@@ -112,24 +112,26 @@ Easy maintenance
 
 Clean architecture
 
-Example:
+Example usage:
 
 java
 Copy code
 ebaypage.ebayserc(driver).sendKeys("laptop");
 ebaypage.click(driver).click();
 6. Running Tests
-Two ways:
+You can run tests in two ways:
 
-Using IntelliJ
-Click ▶ near @Test
+Using IntelliJ:
 
-Using Maven
+Click ▶ near the @Test annotation
+
+Using Maven:
+
 bash
 Copy code
 mvn test
 7. Git Usage
-Used Git to track project:
+Git is used for version control:
 
 bash
 Copy code
@@ -138,12 +140,19 @@ git commit -m "Learnt TestNG automation"
 git push origin main
 📌 What I Have Achieved Till Now
 ✔ Selenium setup
+
 ✔ Maven project creation
+
 ✔ Dependencies handled via pom.xml
+
 ✔ TestNG integration
+
 ✔ Browser automation executed
+
 ✔ Page Object Model implemented
+
 ✔ Git version control used
+
 ✔ Professional project structure followed
 
 🚀 Current Status
@@ -156,4 +165,3 @@ TestNG framework
 Maven setup
 
 POM design
-
