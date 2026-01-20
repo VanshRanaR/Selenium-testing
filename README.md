@@ -7,12 +7,16 @@ Till now, I have set up a complete professional automation environment and succe
 
 ## 🧠 Concepts Covered Till Now
 
-### 1. Selenium WebDriver
+---
+
+## 1. Selenium WebDriver
+
 Selenium is an open-source tool used to automate web applications.  
 WebDriver is the core interface that:
-- Opens browsers
-- Finds elements
-- Performs actions like click, sendKeys, etc.
+
+- Opens browsers  
+- Finds web elements  
+- Performs actions like `click()`, `sendKeys()`, etc.
 
 Flow:
 Java Code → Selenium WebDriver → Browser Driver → Real Browser
@@ -22,12 +26,16 @@ Copy code
 
 ---
 
-### 2. Maven (Build & Dependency Management)
+## 2. Maven (Build & Dependency Management)
+
 Maven is used to:
-- Manage Selenium and TestNG dependencies
-- Maintain project structure
-- Run tests using commands like:
-  bash
+
+- Manage Selenium and TestNG dependencies  
+- Maintain project structure  
+- Run tests using:
+
+```bash
+````
 mvn test
 Dependencies added:
 
@@ -46,10 +54,10 @@ selenium1
 │
 └── src
     ├── main
-    │   └── java          → Application logic (future use)
+    │   └── java        → Application logic (future use)
     │
     └── test
-        └── java          → All Selenium + TestNG test cases
+        └── java        → All Selenium + TestNG test cases
 Important rule:
 
 TestNG test classes must always be inside src/test/java.
@@ -65,21 +73,21 @@ Generating reports
 
 Supporting annotations
 
-Common annotations used:
+Common annotations:
 
 java
 Copy code
 @BeforeTest   // Browser setup
 @Test         // Actual test execution
 @AfterTest    // Close browser
-Example:
+Execution flow:
 
-java
+less
 Copy code
-@BeforeTest → Setup browser
-@Test → Run test
-@AfterTest → Close browser
-TestNG helps make tests:
+@BeforeTest → Setup browser  
+@Test → Run test  
+@AfterTest → Close browser  
+TestNG makes tests:
 
 Structured
 
@@ -113,12 +121,10 @@ ebaypage.click(driver).click();
 6. Running Tests
 Two ways:
 
-Using IntelliJ:
-
+Using IntelliJ
 Click ▶ near @Test
 
-Using Maven:
-
+Using Maven
 bash
 Copy code
 mvn test
@@ -150,3 +156,4 @@ TestNG framework
 Maven setup
 
 POM design
+
