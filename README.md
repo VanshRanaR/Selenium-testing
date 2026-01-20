@@ -27,7 +27,7 @@ Maven is used to:
 - Manage Selenium and TestNG dependencies
 - Maintain project structure
 - Run tests using commands like:
-```bash
+  bash
 mvn test
 Dependencies added:
 
